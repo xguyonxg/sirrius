@@ -1,0 +1,21 @@
+{
+  "date": "2025-10-02",
+  "leads_received": 32,
+  "leads_contacted": 28,
+  "leads_converted": 4,
+  "conversion_rate": 12.5,
+  "ad_spend": 95.60,
+  "cost_per_lead": 2.99,
+  "cost_per_acquisition": 23.90,
+  "revenue": 160.0,
+  "mrr_added": 160.0,
+  "churn_count": 1,
+  "active_subscriptions": 247,
+  "sms_sent": 32,
+  "sms_cost": 3.20,
+  "incidents_count": 0,
+  "incidents_critical": 0,
+  "roi": 167.4,
+  "notes": "Excellente journée, campagne Paris performe bien"
+}
+

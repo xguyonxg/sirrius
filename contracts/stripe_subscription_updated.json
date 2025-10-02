@@ -1,0 +1,41 @@
+{
+  "id": "evt_0987654321",
+  "object": "event",
+  "api_version": "2023-10-16",
+  "created": 1696250000,
+  "type": "customer.subscription.updated",
+  "data": {
+    "object": {
+      "id": "sub_ABC123",
+      "object": "subscription",
+      "customer": "cus_ABC123XYZ",
+      "status": "active",
+      "current_period_start": 1696248000,
+      "current_period_end": 1698926400,
+      "plan": {
+        "id": "price_monthly_40",
+        "amount": 4000,
+        "currency": "eur",
+        "interval": "month"
+      },
+      "items": {
+        "data": [
+          {
+            "id": "si_ABC",
+            "price": {
+              "id": "price_monthly_40",
+              "unit_amount": 4000
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "lead_id": "lead_12345"
+      }
+    },
+    "previous_attributes": {
+      "status": "trialing"
+    }
+  }
+}
+

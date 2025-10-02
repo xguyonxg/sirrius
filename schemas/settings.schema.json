@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Settings",
+  "description": "Configuration globale et paramètres du système Sirrius",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Identifiant unique du paramètre"
+    },
+    "key": {
+      "type": "string",
+      "description": "Clé du paramètre (ex: max_daily_leads, sms_cost_per_unit)"
+    },
+    "value": {
+      "type": "string",
+      "description": "Valeur du paramètre"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["string", "number", "boolean", "json"],
+      "description": "Type de la valeur"
+    },
+    "category": {
+      "type": "string",
+      "description": "Catégorie (ex: business, technical, billing)"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description du paramètre"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_by": {
+      "type": "string",
+      "description": "Email de l'utilisateur ayant modifié"
+    }
+  },
+  "required": ["key", "value", "type"]
+}
+

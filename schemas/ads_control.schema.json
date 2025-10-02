@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Ads_Control",
+  "description": "Contrôle et état des campagnes publicitaires Facebook",
+  "type": "object",
+  "properties": {
+    "campaign_id": {
+      "type": "string",
+      "description": "ID de la campagne Facebook"
+    },
+    "campaign_name": {
+      "type": "string",
+      "description": "Nom de la campagne"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "paused", "archived"],
+      "description": "Statut actuel"
+    },
+    "auto_pause_enabled": {
+      "type": "boolean",
+      "description": "Pause automatique activée basée sur capacité"
+    },
+    "daily_budget": {
+      "type": "number",
+      "description": "Budget journalier en euros"
+    },
+    "spent_today": {
+      "type": "number",
+      "description": "Dépensé aujourd'hui"
+    },
+    "leads_today": {
+      "type": "integer",
+      "description": "Leads générés aujourd'hui"
+    },
+    "cost_per_lead": {
+      "type": "number",
+      "description": "Coût par lead"
+    },
+    "last_status_change": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Dernière modification de statut"
+    },
+    "last_status_change_reason": {
+      "type": "string",
+      "description": "Raison du changement (capacity_full, manual, scheduled)"
+    },
+    "target_audience": {
+      "type": "string",
+      "description": "Audience cible"
+    },
+    "performance_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 10,
+      "description": "Score de performance (0-10)"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": ["campaign_id", "campaign_name", "status"]
+}
+

@@ -1,0 +1,15 @@
+{
+  "message_id": "sms_msg_123456",
+  "from": "+33612345678",
+  "to": "+33700000000",
+  "body": "STOP",
+  "timestamp": "2025-10-02T14:30:00Z",
+  "direction": "inbound",
+  "provider": "twilio",
+  "metadata": {
+    "country": "FR",
+    "operator": "Orange"
+  },
+  "_note": "IMPORTANT: Ce message contient STOP - déclencher immédiatement la procédure d'opt-out. Voir /sops/README.md section 'OK #2: Opt-Out SMS d'un Lead'"
+}
+

@@ -1,0 +1,30 @@
+{
+  "id": "evt_9988776655",
+  "object": "event",
+  "api_version": "2023-10-16",
+  "created": 1696270000,
+  "type": "invoice.payment_failed",
+  "data": {
+    "object": {
+      "id": "in_1234567890",
+      "object": "invoice",
+      "customer": "cus_ABC123XYZ",
+      "subscription": "sub_ABC123",
+      "amount_due": 4000,
+      "amount_paid": 0,
+      "currency": "eur",
+      "status": "open",
+      "attempt_count": 2,
+      "billing_reason": "subscription_cycle",
+      "charge": "ch_failed_12345",
+      "last_payment_error": {
+        "code": "card_declined",
+        "message": "Your card was declined.",
+        "type": "card_error"
+      },
+      "next_payment_attempt": 1696356000,
+      "customer_email": "client@example.com"
+    }
+  }
+}
+

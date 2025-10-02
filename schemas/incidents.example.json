@@ -1,0 +1,16 @@
+{
+  "id": "inc_20251002_001",
+  "date": "2025-10-02T14:23:00Z",
+  "type": "webhook_failure",
+  "severity": "high",
+  "service": "stripe",
+  "description": "Webhook checkout.session.completed non reçu pendant 15 minutes",
+  "status": "resolved",
+  "detected_by": "auto",
+  "resolution": "Redémarrage du service webhook listener, replay manuel des 3 événements manqués",
+  "resolved_at": "2025-10-02T14:45:00Z",
+  "duration_minutes": 22,
+  "impact": "3 souscriptions non traitées temporairement",
+  "related_ids": ["cus_stripe_123", "cus_stripe_456", "cus_stripe_789"]
+}
+

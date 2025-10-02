@@ -1,0 +1,30 @@
+{
+  "id": "evt_1234567890",
+  "object": "event",
+  "api_version": "2023-10-16",
+  "created": 1696248000,
+  "type": "checkout.session.completed",
+  "data": {
+    "object": {
+      "id": "cs_test_1234567890",
+      "object": "checkout.session",
+      "amount_total": 4000,
+      "currency": "eur",
+      "customer": "cus_ABC123XYZ",
+      "customer_email": "client@example.com",
+      "mode": "subscription",
+      "payment_status": "paid",
+      "status": "complete",
+      "subscription": "sub_ABC123",
+      "success_url": "https://sirrius.com/success?session_id={CHECKOUT_SESSION_ID}",
+      "metadata": {
+        "lead_id": "lead_12345",
+        "fb_lead_id": "fb_987654321",
+        "source": "facebook_ads"
+      },
+      "phone": "+33612345678",
+      "custom_fields": []
+    }
+  }
+}
+

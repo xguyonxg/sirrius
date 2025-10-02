@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "KPI_Daily",
+  "description": "KPIs journaliers consolidés",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date (YYYY-MM-DD)"
+    },
+    "leads_received": {
+      "type": "integer",
+      "description": "Nombre de leads reçus"
+    },
+    "leads_contacted": {
+      "type": "integer",
+      "description": "Leads contactés"
+    },
+    "leads_converted": {
+      "type": "integer",
+      "description": "Leads convertis en clients"
+    },
+    "conversion_rate": {
+      "type": "number",
+      "description": "Taux de conversion (%)"
+    },
+    "ad_spend": {
+      "type": "number",
+      "description": "Dépenses publicitaires (€)"
+    },
+    "cost_per_lead": {
+      "type": "number",
+      "description": "Coût par lead (€)"
+    },
+    "cost_per_acquisition": {
+      "type": "number",
+      "description": "Coût par acquisition client (€)"
+    },
+    "revenue": {
+      "type": "number",
+      "description": "Revenu généré (€)"
+    },
+    "mrr_added": {
+      "type": "number",
+      "description": "MRR ajouté (€)"
+    },
+    "churn_count": {
+      "type": "integer",
+      "description": "Nombre de désabonnements"
+    },
+    "active_subscriptions": {
+      "type": "integer",
+      "description": "Abonnements actifs en fin de journée"
+    },
+    "sms_sent": {
+      "type": "integer",
+      "description": "Nombre de SMS envoyés"
+    },
+    "sms_cost": {
+      "type": "number",
+      "description": "Coût SMS (€)"
+    },
+    "incidents_count": {
+      "type": "integer",
+      "description": "Nombre d'incidents"
+    },
+    "incidents_critical": {
+      "type": "integer",
+      "description": "Incidents critiques"
+    },
+    "roi": {
+      "type": "number",
+      "description": "ROI (%)"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes ou observations"
+    }
+  },
+  "required": ["date", "leads_received"]
+}
+

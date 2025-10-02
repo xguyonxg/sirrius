@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Leads",
+  "description": "Leads générés via formulaires Facebook Ads",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Identifiant unique du lead"
+    },
+    "fb_lead_id": {
+      "type": "string",
+      "description": "ID du lead Facebook"
+    },
+    "ad_id": {
+      "type": "string",
+      "description": "ID de la publicité source"
+    },
+    "campaign_id": {
+      "type": "string",
+      "description": "ID de la campagne"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date de création du lead"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Numéro de téléphone"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email du prospect"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "postcode": {
+      "type": "string",
+      "description": "Code postal"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["new", "contacted", "qualified", "converted", "rejected", "opted_out"],
+      "description": "Statut du lead"
+    },
+    "sms_sent": {
+      "type": "boolean",
+      "description": "SMS de bienvenue envoyé"
+    },
+    "sms_sent_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "conversion_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "stripe_customer_id": {
+      "type": "string",
+      "description": "ID client Stripe si converti"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": ["fb_lead_id", "phone", "created_at", "status"]
+}
+

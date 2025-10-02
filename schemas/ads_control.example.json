@@ -1,0 +1,16 @@
+{
+  "campaign_id": "fb_camp_123456",
+  "campaign_name": "Campagne Hiver 2025 - Paris",
+  "status": "active",
+  "auto_pause_enabled": true,
+  "daily_budget": 100.0,
+  "spent_today": 45.30,
+  "leads_today": 15,
+  "cost_per_lead": 3.02,
+  "last_status_change": "2025-10-01T08:00:00Z",
+  "last_status_change_reason": "scheduled",
+  "target_audience": "75-92, 25-45 ans, intéressés services",
+  "performance_score": 7.5,
+  "updated_at": "2025-10-02T12:30:00Z"
+}
+

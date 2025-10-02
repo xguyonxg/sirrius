@@ -1,0 +1,31 @@
+{
+  "id": "evt_1122334455",
+  "object": "event",
+  "api_version": "2023-10-16",
+  "created": 1696260000,
+  "type": "customer.subscription.deleted",
+  "data": {
+    "object": {
+      "id": "sub_ABC123",
+      "object": "subscription",
+      "customer": "cus_ABC123XYZ",
+      "status": "canceled",
+      "canceled_at": 1696260000,
+      "cancel_at_period_end": false,
+      "ended_at": 1696260000,
+      "current_period_start": 1696248000,
+      "current_period_end": 1698926400,
+      "plan": {
+        "id": "price_monthly_40",
+        "amount": 4000,
+        "currency": "eur",
+        "interval": "month"
+      },
+      "metadata": {
+        "lead_id": "lead_12345",
+        "churn_reason": "customer_request"
+      }
+    }
+  }
+}
+
