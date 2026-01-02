@@ -82,7 +82,7 @@ export default function PricingPage() {
           <Card>
             <CardHeader>
               <CardTitle className="text-xl">Pro</CardTitle>
-              <CardDescription>Automatisation + verrouillage + preuve</CardDescription>
+              <CardDescription>Automatisation fiable, preuve incluse.</CardDescription>
               <div className="pt-2">
                 <p className="text-3xl font-bold">290 CHF</p>
                 <p className="text-sm text-muted-foreground">par mois / site</p>
@@ -92,28 +92,25 @@ export default function PricingPage() {
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  1 site, jusqu'à 2 praticiens inclus
+                  Créneau libéré &lt;24h → offres SMS 24/7
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  1 séquence standard + réglages simples
+                  1 créneau = 1 confirmation (réservation unique)
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Détection + offres SMS 24/7
+                  Preuve horodatée + reporting
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Lock dur + audit trail + reporting
+                  Réglages simples (horaires, exceptions de base)
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  SLA d'exécution après détection
+                  Jusqu'à 2 praticiens (max 3)
                 </li>
               </ul>
-              <p className="text-xs text-muted-foreground">
-                Max 3 praticiens sur Pro (+1 en add-on).
-              </p>
             </CardContent>
           </Card>
 
@@ -121,7 +118,7 @@ export default function PricingPage() {
           <Card className="border-2">
             <CardHeader>
               <CardTitle className="text-xl">Max</CardTitle>
-              <CardDescription>Pilotage + gouvernance + objectif conditionnel</CardDescription>
+              <CardDescription>Contrôle avancé + objectif mesuré (si éligible).</CardDescription>
               <div className="pt-2">
                 <p className="text-3xl font-bold">590 CHF</p>
                 <p className="text-sm text-muted-foreground">par mois / site</p>
@@ -131,23 +128,27 @@ export default function PricingPage() {
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  1 site, jusqu'à 5 praticiens inclus
+                  Tout Pro inclus
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  2–3 séquences + exclusions fines + cooldown patient
+                  2–3 scénarios de messages
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Quotas, rotation, fairness + blacklist
+                  Répartition équitable (évite de solliciter toujours les mêmes)
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Dashboard complet + support prioritaire
+                  Exceptions avancées + pause entre messages
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Objectif conditionnel sur 60 jours d'ouverture
+                  Tableau de bord complet + support prioritaire
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
+                  Jusqu'à 5 praticiens
                 </li>
               </ul>
 
