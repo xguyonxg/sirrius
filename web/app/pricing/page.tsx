@@ -70,8 +70,8 @@ export default function PricingPage() {
             </div>
 
             <div className="rounded-lg bg-muted p-3 text-xs text-muted-foreground">
-              <strong>Scope strict :</strong> 1 site, 1 séquence standard. Aucune personnalisation.
-              Aucun objectif de taux pendant cette phase.
+              <strong>Scope strict :</strong> 1 site, jusqu'à 2 praticiens, 1 séquence standard.
+              Aucune personnalisation. Aucun objectif de taux.
             </div>
           </CardContent>
         </Card>
@@ -82,9 +82,9 @@ export default function PricingPage() {
           <Card>
             <CardHeader>
               <CardTitle className="text-xl">Pro</CardTitle>
-              <CardDescription>Automatisation 24/7 + preuve</CardDescription>
+              <CardDescription>Automatisation + verrouillage + preuve</CardDescription>
               <div className="pt-2">
-                <p className="text-3xl font-bold">390 CHF</p>
+                <p className="text-3xl font-bold">290 CHF</p>
                 <p className="text-sm text-muted-foreground">par mois / site</p>
               </div>
             </CardHeader>
@@ -92,7 +92,11 @@ export default function PricingPage() {
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  1 site, 2 praticiens inclus
+                  1 site, jusqu'à 2 praticiens inclus
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
+                  1 séquence standard + réglages simples
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -100,17 +104,16 @@ export default function PricingPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Lock dur (1 gagnant par créneau)
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Audit trail + logs horodatés
+                  Lock dur + audit trail + reporting
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   SLA d'exécution après détection
                 </li>
               </ul>
+              <p className="text-xs text-muted-foreground">
+                Max 3 praticiens sur Pro (+1 en add-on).
+              </p>
             </CardContent>
           </Card>
 
@@ -118,9 +121,9 @@ export default function PricingPage() {
           <Card className="border-2">
             <CardHeader>
               <CardTitle className="text-xl">Max</CardTitle>
-              <CardDescription>Pilotage avancé + objectif conditionnel</CardDescription>
+              <CardDescription>Pilotage + gouvernance + objectif conditionnel</CardDescription>
               <div className="pt-2">
-                <p className="text-3xl font-bold">890 CHF</p>
+                <p className="text-3xl font-bold">590 CHF</p>
                 <p className="text-sm text-muted-foreground">par mois / site</p>
               </div>
             </CardHeader>
@@ -128,23 +131,23 @@ export default function PricingPage() {
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Tout Pro inclus (1 site, 2 praticiens)
+                  1 site, jusqu'à 5 praticiens inclus
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
+                  2–3 séquences + exclusions fines + cooldown patient
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
+                  Quotas, rotation, fairness + blacklist
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
+                  Dashboard complet + support prioritaire
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Objectif conditionnel sur 60 jours d'ouverture
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Quotas et rotation de la supply
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Blacklist et règles d'exclusion
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Reporting avancé + analytics
                 </li>
               </ul>
 
@@ -166,13 +169,23 @@ export default function PricingPage() {
             <CardTitle className="text-lg">Extensions</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid gap-4 text-sm md:grid-cols-2">
+            <div className="grid gap-4 text-sm">
               <div className="flex items-center justify-between rounded-lg border p-4">
-                <span>Praticien supplémentaire</span>
+                <div>
+                  <span className="font-medium">Praticien supplémentaire (Pro)</span>
+                  <p className="text-xs text-muted-foreground">Max 1 add-on sur Pro (3 praticiens max)</p>
+                </div>
                 <span className="font-semibold">+150 CHF/mois</span>
               </div>
               <div className="flex items-center justify-between rounded-lg border p-4">
-                <span>Site supplémentaire</span>
+                <div>
+                  <span className="font-medium">Praticien supplémentaire (Max)</span>
+                  <p className="text-xs text-muted-foreground">Au-delà des 5 praticiens inclus</p>
+                </div>
+                <span className="font-semibold">+120 CHF/mois</span>
+              </div>
+              <div className="flex items-center justify-between rounded-lg border p-4">
+                <span className="font-medium">Site supplémentaire</span>
                 <span className="font-semibold">+300 CHF/mois</span>
               </div>
             </div>

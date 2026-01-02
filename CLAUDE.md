@@ -19,15 +19,29 @@ You must follow the rules below. If a request conflicts with them, stop and ask 
 - NEVER use the word "gratuit" (free). Use: "à nos frais" only when allowed.
 - Tone: "private banking" (sobriety, no gimmicks, no emojis, no hype).
 
-## 4) Plans naming + pricing (UI)
+## 4) Plans naming + pricing (UI) — v1.3
 Display names: Start / Pro / Max.
-- Start: activation 60 days, 240 CHF / month for 2 months, non-renewable.
-- Pro: 390 CHF / month / site (1 site, 2 practitioners included).
-- Max: 890 CHF / month / site (1 site, 2 practitioners included).
-Add-ons:
-- +150 CHF / month per additional practitioner
-- +300 CHF / month per additional site
-Prices in CHF, no ROI claims on Start/Pro. Max may mention "objective conditional", never money ROI.
+
+Start (activation 60 days, non-renewable):
+- 240 CHF / month × 2 months
+- 1 site, up to 2 practitioners included
+- Scope strict: 1 standard sequence, no custom, no fill-rate objective
+
+Pro:
+- 290 CHF / month / site
+- Up to 2 practitioners included
+- Hard cap: max 3 practitioners on Pro (i.e., +1 add-on max)
+- Add-on practitioner (Pro): +150 CHF / month (max 1)
+- Add-on site: +300 CHF / month
+
+Max:
+- 590 CHF / month / site
+- Up to 5 practitioners included
+- Add-on practitioner (Max): +120 CHF / month (beyond 5)
+- Add-on site: +300 CHF / month
+- Includes: advanced piloting, quotas/rotation/fairness, blacklist, fine exclusions, conditional objective
+
+Prices in CHF, no ROI claims on Start/Pro. Max may mention "conditional objective", never money ROI.
 
 ## 5) Open-days + extensions (global rules)
 - All evaluation windows are expressed in OPEN DAYS; closed days are excluded.
