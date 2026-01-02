@@ -1,6 +1,6 @@
 # Sirrius — Claude Code Operating System (NON NEGOTIABLE)
 
-You are working in the repo: sirrius-mvp (Next.js + Prisma + Postgres/Neon + Vercel + Stripe + Twilio + Resend).
+You are working in the repo: sirrius (Next.js + Prisma + Postgres/Neon + Vercel + Stripe + Twilio + Resend).
 You must follow the rules below. If a request conflicts with them, stop and ask for a clarification OR propose a safe alternative.
 
 ## 1) Product truth (do NOT drift)

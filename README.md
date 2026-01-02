@@ -1,6 +1,8 @@
-# 🌟 Sirrius MVP
+# Sirrius
 
-**Système intelligent de gestion de leads et d'abonnements avec auto-régulation de capacité.**
+**Surcouche premium de récupération des créneaux libérés <24h pour cabinets médicaux suisses.**
+
+> Voir [docs/strategy/wedge_v13.md](docs/strategy/wedge_v13.md) pour le positionnement complet.
 
 ---
 
@@ -146,7 +148,7 @@ Le Google Sheets contient 6 onglets (voir `/schemas/` pour les structures):
 - **Payments**: Stripe
 - **Ads**: Facebook Lead Ads
 - **Automation**: Make.com
-- **Data Storage**: Google Sheets (MVP) → PostgreSQL (v2)
+- **Data Storage**: Google Sheets (phase initiale) → PostgreSQL (v2)
 - **SMS**: Twilio ou similaire
 
 ---
@@ -157,7 +159,7 @@ Le Google Sheets contient 6 onglets (voir `/schemas/` pour les structures):
 - Taux de conversion (%)
 - Coût par lead (CPL)
 - Coût par acquisition (CPA)
-- ROI publicitaire
+- ROAS (Return on Ad Spend)
 - MRR (Monthly Recurring Revenue)
 - Churn rate
 - Capacité utilisée (%)
@@ -184,7 +186,7 @@ Voir `/sops/README.md` pour:
 
 ## 📅 Roadmap
 
-### Phase 1 - MVP (Actuel)
+### Phase 1 - Fondations (Actuel)
 - [x] Structure projet
 - [ ] App Next.js fonctionnelle
 - [ ] Intégration Stripe webhooks

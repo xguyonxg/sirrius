@@ -1,4 +1,4 @@
-# Documentation Sirrius MVP
+# Documentation Sirrius
 
 Ce dossier contient la documentation technique et fonctionnelle du projet Sirrius.
 
