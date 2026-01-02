@@ -25,7 +25,7 @@ export default function PricingPage() {
               <div>
                 <CardTitle className="text-2xl">Start</CardTitle>
                 <CardDescription className="mt-1">
-                  Activation 60 jours — non renouvelable
+                  Activation 60 jours (non renouvelable) — Mise en service en conditions réelles
                 </CardDescription>
               </div>
               <div className="text-right">
@@ -82,7 +82,7 @@ export default function PricingPage() {
           <Card>
             <CardHeader>
               <CardTitle className="text-xl">Pro</CardTitle>
-              <CardDescription>Exécution garantie, sans objectif</CardDescription>
+              <CardDescription>Automatisation 24/7 + preuve</CardDescription>
               <div className="pt-2">
                 <p className="text-3xl font-bold">390 CHF</p>
                 <p className="text-sm text-muted-foreground">par mois / site</p>
@@ -96,19 +96,19 @@ export default function PricingPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
+                  Détection + offres SMS 24/7
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
+                  Lock dur (1 gagnant par créneau)
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
+                  Audit trail + logs horodatés
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   SLA d'exécution après détection
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Preuve d'action (logs, reporting)
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Séquence SMS 24/7
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Lock dur + audit trail
                 </li>
               </ul>
             </CardContent>
@@ -118,7 +118,7 @@ export default function PricingPage() {
           <Card className="border-2">
             <CardHeader>
               <CardTitle className="text-xl">Max</CardTitle>
-              <CardDescription>Objectif conditionnel sur 60 jours d'ouverture</CardDescription>
+              <CardDescription>Pilotage avancé + objectif conditionnel</CardDescription>
               <div className="pt-2">
                 <p className="text-3xl font-bold">890 CHF</p>
                 <p className="text-sm text-muted-foreground">par mois / site</p>
@@ -128,19 +128,23 @@ export default function PricingPage() {
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  1 site, 2 praticiens inclus
+                  Tout Pro inclus (1 site, 2 praticiens)
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Tout Pro inclus
+                  Objectif conditionnel sur 60 jours d'ouverture
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Objectif de taux activé après validation des prérequis
+                  Quotas et rotation de la supply
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Reporting avancé
+                  Blacklist et règles d'exclusion
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
+                  Reporting avancé + analytics
                 </li>
               </ul>
 
@@ -149,7 +153,7 @@ export default function PricingPage() {
                   <strong>Prérequis :</strong> signal fiable, supply active (opt-ins), processus de confirmation en place.
                 </p>
                 <p>
-                  <strong>Exclusions :</strong> jours fermés, force majeure, créneau repris manuellement avant exécution, volume insuffisant.
+                  <strong>Exclusions :</strong> jours fermés, force majeure, créneau repris manuellement, volume insuffisant.
                 </p>
               </div>
             </CardContent>
@@ -177,19 +181,19 @@ export default function PricingPage() {
 
         {/* Conditions */}
         <div className="rounded-lg border bg-muted/50 p-6 text-sm text-muted-foreground">
-          <h3 className="mb-4 font-semibold text-foreground">Conditions d'évaluation</h3>
+          <h3 className="mb-4 font-semibold text-foreground">Conditions générales</h3>
           <ul className="space-y-3">
             <li>
-              Les fenêtres d'évaluation sont exprimées en jours d'ouverture. Les jours fermés sont exclus.
+              <strong>Jours d'ouverture :</strong> toutes les fenêtres d'évaluation sont exprimées en jours d'ouverture du cabinet. Les jours fermés (week-ends, congés, fermetures exceptionnelles) sont exclus du décompte.
             </li>
             <li>
-              Si l'échantillon est insuffisant, la fenêtre d'évaluation est prolongée jusqu'à atteindre le minimum requis, plafonnée à +60 jours d'ouverture.
+              <strong>Échantillon insuffisant :</strong> si le volume de créneaux détectés est insuffisant pour une évaluation fiable, la fenêtre est prolongée jusqu'à atteindre le minimum requis, plafonnée à +60 jours d'ouverture.
             </li>
             <li>
-              Si Sirrius ne respecte pas ses engagements d'exécution et de traçabilité, Sirrius prolonge la période de service à ses frais (une seule fois).
+              <strong>Engagement d'exécution :</strong> si Sirrius ne respecte pas ses engagements d'exécution et de traçabilité (SLA après détection, logs manquants), Sirrius prolonge la période de service de 2 mois à ses frais (une seule fois).
             </li>
             <li>
-              <strong>Max uniquement :</strong> si l'objectif conditionnel est activé et non atteint malgré respect des conditions, Sirrius prolonge la fenêtre de mesure à ses frais jusqu'à 60 jours d'ouverture supplémentaires (une seule fois).
+              <strong>Max — objectif conditionnel :</strong> si l'objectif conditionnel est activé et non atteint malgré le respect des conditions (signal, supply, process), Sirrius prolonge la fenêtre de mesure à ses frais jusqu'à +60 jours d'ouverture supplémentaires (une seule fois).
             </li>
           </ul>
         </div>
