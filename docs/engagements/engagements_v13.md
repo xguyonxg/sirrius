@@ -4,8 +4,12 @@
 
 **Sirrius s'engage à** :
 
-1. **Exécution** : après détection d'un créneau libéré <24h, envoi des offres SMS dans le délai SLA convenu.
+1. **Exécution** : après détection d'un créneau libéré <24h, envoi des offres SMS dans le délai SLA.
 2. **Preuve** : logs horodatés, audit trail append-only, reporting accessible.
+
+**SLA (après détection du trou)** :
+- SLA externe (promesse) : ≤ 2 minutes — preuve par logs horodatés.
+- SLA interne p95 (monitoring) : ≤ 5 minutes — tolérance incidents mineurs.
 
 ### Si Sirrius ne respecte pas cet engagement
 
@@ -24,7 +28,7 @@ Pour les clients Max, un **objectif de taux de récupération** peut être activ
 | Critère | Description |
 |---------|-------------|
 | Signal fiable | Calendar sync actif OU email forwarding fonctionnel. |
-| Liste active | Minimum 50 patients opt-in dans la supply. |
+| Liste active | Minimum 30 opt-ins actifs (sinon objectif mesuré non activable). Recommandé : 50+ pour stabilité. |
 | Process confirmation | Secrétariat confirme les réservations dans les 2h ouvrées. |
 
 ### Période de mesure

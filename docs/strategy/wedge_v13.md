@@ -14,7 +14,7 @@ Signal (créneau libéré <24h)
     ↓
 Offres SMS automatisées 24/7
     ↓
-Réservation unique (un seul gagnant)
+Réservation unique (1 confirmation)
     ↓
 Preuve horodatée (audit trail)
 ```
@@ -45,7 +45,7 @@ Canaux **non dépendants de la secrétaire** :
 
 | Mécanisme | Description |
 |-----------|-------------|
-| Réservation unique | Un seul patient peut réserver un créneau. Premier arrivé = seul servi. |
+| Réservation unique | Un seul patient peut réserver un créneau. La première confirmation valide le créneau. |
 | Expiration | Si pas de réponse dans le délai, le créneau passe au suivant ou expire. |
 | Escalade en vagues | Offres envoyées par vagues successives (pas de spam de masse). |
 | Gestion des conflits | Si créneau repris manuellement avant exécution Sirrius → créneau retiré. |
@@ -57,6 +57,46 @@ Canaux **non dépendants de la secrétaire** :
 - **Zéro donnée sensible** : aucune information médicale dans les SMS.
 - **WhatsApp** : NO GO tant que le consentement auditable n'est pas implémenté.
 - **Data minimization** : seules les données nécessaires à l'exécution et la preuve sont stockées.
+
+## Paramètres V0 (opérationnels)
+
+### SLA (détection → déclenchement vague 1)
+
+| Type | Valeur | Notes |
+|------|--------|-------|
+| SLA externe (promesse) | ≤ 2 minutes | Logs horodatés comme preuve. |
+| SLA interne p95 (monitoring) | ≤ 5 minutes | Tolérance incidents mineurs. |
+
+**24/7** : moteur actif 24/7, fenêtre de contact configurable (par défaut raisonnable), envoi 24/7 activable si le cabinet le souhaite.
+
+### Vagues & TTL (V0)
+
+| Paramètre | Valeur par défaut |
+|-----------|-------------------|
+| Taille vague | 5 (ajustable) |
+| Max vagues | 3 |
+
+**TTL dynamique** selon temps avant le créneau :
+
+| Temps avant créneau | TTL |
+|---------------------|-----|
+| 4–6h | 60 min |
+| 2–4h | 45 min |
+| < 2h | 20–30 min |
+
+**Petite supply (≤ 5 opt-ins)** :
+- 1 seule vague = tout le monde
+- 1 relance à H+60 min (si créneau encore pertinent)
+- Pas d'escalade artificielle
+
+### Anti-sollicitation (anti-spam)
+
+| Règle | Limite |
+|-------|--------|
+| Max offres / jour / patient | 1 |
+| Max offres / 7 jours / patient | 3 |
+
+**But** : protéger l'image du cabinet + réduire STOP + éviter que les mêmes monopolisent.
 
 ## Ce que Sirrius ne promet jamais
 

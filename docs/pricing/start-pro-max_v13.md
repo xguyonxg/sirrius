@@ -31,6 +31,7 @@
 - Réservation unique
 - Preuve horodatée
 - Pause entre messages (anti-spam)
+- Plafond anti-sollicitation : 1 offre/jour/patient, 3 offres/7 jours/patient
 
 ## Max
 
@@ -41,7 +42,7 @@
 
 **Inclus (tout Pro, plus)** :
 - Répartition équitable entre praticiens
-- Exceptions avancées (blacklist patients, créneaux exclus)
+- Règles avancées : cooldowns, blacklist/pause patients, exceptions fines, 2–3 scénarios messages
 - Objectif mesuré (si éligible, voir engagements)
 - Support prioritaire
 
