@@ -83,3 +83,19 @@ Then implement from the plan.
 ## 9) Default decision policy
 - Prefer the safest option that preserves the wedge and avoids legal/reputation risk.
 - If something is ambiguous, choose the minimal/safer interpretation and document assumptions.
+
+## 10) Docs Protocol
+
+Toute documentation wedge (spec, backlog, doc client) doit respecter le **Definition of Done** :
+→ `docs/ops/DOC_DEFINITION_OF_DONE.md`
+
+**Règles clés** :
+- Ton "banque privée" : pas de jargon technique visible (append-only, audit trail, p95, etc.)
+- Sources canoniques : `wedge_v13.md`, `engagements_v13.md`, `start-pro-max_v13.md`
+- Points wedge non négociables : fenêtre 08:00–20:00 + option 24/7, TTL dynamique, petite supply, anti-spam, équité Max
+- Confirmation = écriture agenda + eventId ; write fail = pas confirmé
+- Templates SMS canoniques EXACTS (4 messages)
+- Preuve horodatée + rétention 12 mois + export
+
+**Obligation** : chaque doc wedge se termine par un **Completeness Report PASS/FAIL** avec références (sections/lignes).
+Si FAIL → corriger et refaire le report.

@@ -12,11 +12,11 @@ Sirrius est une **surcouche premium** pour cabinets médicaux suisses.
 ```
 Signal (créneau libéré <24h)
     ↓
-Offres SMS automatisées 24/7
+Offres SMS automatisées (08:00–20:00 par défaut, option 24/7)
     ↓
 Réservation unique (1 confirmation)
     ↓
-Preuve horodatée (audit trail)
+Preuve horodatée (historique complet)
 ```
 
 ## Signal
@@ -46,10 +46,10 @@ Canaux **non dépendants de la secrétaire** :
 | Mécanisme | Description |
 |-----------|-------------|
 | Réservation unique | Un seul patient peut réserver un créneau. La première confirmation valide le créneau. |
-| Expiration | Si pas de réponse dans le délai, le créneau passe au suivant ou expire. |
+| Expiration | Si pas de réponse dans le délai (TTL), le créneau passe au suivant ou expire. |
 | Escalade en vagues | Offres envoyées par vagues successives (pas de spam de masse). |
 | Gestion des conflits | Si créneau repris manuellement avant exécution Sirrius → créneau retiré. |
-| Audit trail | Chaque action horodatée, append-only, exportable. |
+| Historique horodaté | Chaque action est tracée avec horodatage, exportable. |
 
 ## Conformité
 
@@ -60,34 +60,43 @@ Canaux **non dépendants de la secrétaire** :
 
 ## Paramètres V0 (opérationnels)
 
-### SLA (détection → déclenchement vague 1)
+### SLA (après détection)
+
+Après détection d'un créneau libéré, Sirrius crée et horodate l'exécution, puis planifie ou envoie la vague 1 en ≤ 2 minutes (selon fenêtre d'envoi).
 
 | Type | Valeur | Notes |
 |------|--------|-------|
-| SLA externe (promesse) | ≤ 2 minutes | Logs horodatés comme preuve. |
-| SLA interne p95 (monitoring) | ≤ 5 minutes | Tolérance incidents mineurs. |
+| SLA externe (promesse) | ≤ 2 minutes | Preuve par logs horodatés. |
+| Monitoring interne | ≤ 5 minutes | Incidents tolérés mais tracés. |
 
-**24/7** : moteur actif 24/7, fenêtre de contact configurable (par défaut raisonnable), envoi 24/7 activable si le cabinet le souhaite.
+**Fenêtre d'envoi par défaut** : 08:00–20:00, 7 jours/7 (Europe/Zurich). Option 24/7 activable sur demande.
 
-### Vagues & TTL (V0)
+**Règle hors fenêtre** : si le créneau commence trop tôt pour laisser un TTL utile, pas d'envoi ; log "trop tard / hors fenêtre".
+
+### TTL (temps de réponse patient)
+
+Le TTL démarre à l'envoi du SMS, pas à la détection.
+
+| Temps avant créneau | TTL |
+|---------------------|-----|
+| 12–24h | 3h |
+| 6–12h | 2h |
+| 4–6h | 60–90 min |
+| 2–4h | 45–60 min |
+| < 2h | 20–30 min |
+
+### Vagues
 
 | Paramètre | Valeur par défaut |
 |-----------|-------------------|
 | Taille vague | 5 (ajustable) |
 | Max vagues | 3 |
-
-**TTL dynamique** selon temps avant le créneau :
-
-| Temps avant créneau | TTL |
-|---------------------|-----|
-| 4–6h | 60 min |
-| 2–4h | 45 min |
-| < 2h | 20–30 min |
+| Rappel | 1 rappel unique à 50% du TTL (si disponible). Pas de rappel si TTL < 30 min. |
 
 **Petite supply (≤ 5 opt-ins)** :
 - 1 seule vague = tout le monde
-- 1 relance à H+60 min (si créneau encore pertinent)
 - Pas d'escalade artificielle
+- Manque de supply visible au dashboard
 
 ### Anti-sollicitation (anti-spam)
 
@@ -97,6 +106,49 @@ Canaux **non dépendants de la secrétaire** :
 | Max offres / 7 jours / patient | 3 |
 
 **But** : protéger l'image du cabinet + réduire STOP + éviter que les mêmes monopolisent.
+
+### Équité (Max uniquement)
+
+- Tri "moins sollicités d'abord" dans chaque vague.
+- Cooldown post-confirmation : 7–14 jours avant nouvelle sollicitation.
+
+## Confirmation (V0)
+
+**Confirmé = événement écrit dans l'agenda (Google/Outlook) + eventId stocké côté Sirrius.**
+
+Si l'écriture dans l'agenda échoue → pas confirmé.
+
+Calendar write obligatoire dès Start (sinon NO GO onboarding).
+
+### Stockage de l'identifiant Sirrius
+
+L'identifiant Sirrius est stocké en métadonnée technique non visible lorsque le fournisseur d'agenda le permet, afin de ne laisser aucune information sensible dans le calendrier.
+
+Si non disponible, utiliser le champ le moins exposé possible (jamais le titre), sans donnée sensible.
+
+## SMS — modèles canoniques (sobres, sans données sensibles)
+
+### Offre (v1)
+```
+{CABINET} : un créneau s'est libéré le {DATE} à {HEURE}. Confirmez si cela vous convient : {LIEN}. Merci. Pour ne plus recevoir ce SMS, répondez STOP.
+```
+
+### Rappel
+```
+{CABINET} : ce créneau est toujours disponible ({DATE} {HEURE}). Confirmez ici : {LIEN}. Merci. Pour ne plus recevoir ce SMS, répondez STOP.
+```
+
+### Indisponible
+```
+{CABINET} : ce créneau n'est plus disponible. Merci. Pour ne plus recevoir ce SMS, répondez STOP.
+```
+
+**Note** : "Indisponible" n'est envoyé qu'aux patients qui cliquent trop tard.
+
+### STOP
+```
+{CABINET} : vous ne recevrez plus de messages. Merci.
+```
 
 ## Ce que Sirrius ne promet jamais
 

@@ -4,16 +4,22 @@
 
 **Sirrius s'engage à** :
 
-1. **Exécution** : après détection d'un créneau libéré <24h, envoi des offres SMS dans le délai SLA.
-2. **Preuve** : logs horodatés, audit trail append-only, reporting accessible.
+1. **Exécution** : après détection d'un créneau libéré <24h, création et horodatage de l'exécution, puis planification ou envoi de la vague 1 en ≤ 2 minutes (selon fenêtre d'envoi).
+2. **Preuve** : historique horodaté complet, reporting accessible.
 
-**SLA (après détection du trou)** :
+**SLA (après détection du créneau libéré)** :
 - SLA externe (promesse) : ≤ 2 minutes — preuve par logs horodatés.
-- SLA interne p95 (monitoring) : ≤ 5 minutes — tolérance incidents mineurs.
+- Monitoring interne : ≤ 5 minutes — incidents tolérés mais tracés.
+
+**Fenêtre d'envoi par défaut** : 08:00–20:00, 7 jours/7 (Europe/Zurich). Hors fenêtre, l'envoi est planifié mais l'exécution reste horodatée.
+
+**Confirmation** : une confirmation n'est comptée que lorsqu'un événement a été écrit dans l'agenda du cabinet (Google/Outlook).
 
 ### Si Sirrius ne respecte pas cet engagement
 
 → Prolongation du service de **2 mois à nos frais** (une seule fois par contrat).
+
+"À nos frais" = extension de service sans facturation supplémentaire (une seule fois).
 
 **Conditions de déclenchement** :
 - Défaut de Sirrius prouvé (logs manquants, SLA non respecté, erreur d'exécution).
